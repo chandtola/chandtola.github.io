@@ -125,9 +125,8 @@
             justify-content: center;
             text-align: center;
             padding: 0 1.5rem;
-            background: url('images/logo.jpg') center center no-repeat;
-            background-size: 80%; /* 50% → 80% = 60% bigger */
-            background-color: var(--navy);
+            /* Remove background image from here */
+            background-color: var(--navy); /* Keep navy background */
             position: relative;
             margin-top: 80px;
         }
@@ -136,6 +135,22 @@
             max-width: 900px;
             z-index: 2;
             padding: 2.5rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Logo Image Container */
+        .logo-container {
+            margin-bottom: 2rem; /* Space between logo and text */
+            max-width: 100%;
+            max-height: 60vh; /* Ensure it doesn't overflow vertically */
+        }
+
+        .logo-container img {
+            width: 100%;
+            height: auto;
+            object-fit: contain; /* Preserve aspect ratio */
         }
 
         .hero h1 {
@@ -390,7 +405,7 @@
         @media (max-width: 900px) {
             h1 { font-size: 3.2rem; }
             h2 { font-size: 2.3rem; }
-            .hero { background-size: 90%; margin-top: 120px; }
+            .hero { margin-top: 120px; }
             nav { padding: 1rem 4%; }
             .nav-links li { margin-left: 1.4rem; }
         }
@@ -420,6 +435,10 @@
     <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
+            <!-- Logo Image -->
+            <div class="logo-container">
+                <img src="images/logo.jpg" alt="Tola Logo">
+            </div>
             <h1>Manufacturer of Premium Rainwear & Windcheaters</h1>
             <p>Engineered for Nepal’s climate. Trusted by professionals nationwide.</p>
         </div>
